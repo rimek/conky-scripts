@@ -1,0 +1,7 @@
+setup.cfg
+imaplib2/__init__.py
+imaplib2/imaplib2.py
+pip-egg-info/imaplib2.egg-info/PKG-INFO
+pip-egg-info/imaplib2.egg-info/SOURCES.txt
+pip-egg-info/imaplib2.egg-info/dependency_links.txt
+pip-egg-info/imaplib2.egg-info/top_level.txt

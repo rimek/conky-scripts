@@ -28,7 +28,7 @@ setup(
     keywords = 'system',
     license = 'BSD',
     install_requires = [
-        'imaplib',
+        'imaplib2',
         'setuptools',
         'keyring',
         'setproctitle',
@@ -36,7 +36,7 @@ setup(
     zip_safe = False,
     entry_points = {
         'console_scripts': [
-           'conky-scripts = conky-scripts.main:run',
+           'conky-scripts = conky_scripts.main:run',
         ],
     },
 )
