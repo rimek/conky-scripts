@@ -9,7 +9,7 @@ from lib.conky.module import ConkyModule
 class GitCheck(ConkyModule):
 
     repos = (('configs', '~/configs/files'), 
-             ('serials', '/add/projekty/serialwatcher'), 
+             ('serials', '/add/projekty/linux/serialwatcher'), 
              ('timesheet', '/kp'))
 
     command = """ cd %s;
