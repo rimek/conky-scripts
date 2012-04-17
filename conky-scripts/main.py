@@ -17,7 +17,7 @@ modules = ((Mail, 60),
            (Pacman, 600),
           )
 
-def run():
+if __name__ == '__main__':
 
     try:
         daemon = ConkyDaemon('/tmp/conky-scripts.pid', modules=modules)
@@ -48,7 +48,5 @@ def run():
         print "* ConkyError raised: ", unicode(e.error)
 
 
-if __name__ == '__main__':
-    run()
 
 

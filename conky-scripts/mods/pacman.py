@@ -30,8 +30,12 @@ class Pacman(ConkyModule):
             if counter <= self.limit:
                 output.append(line)
 
-        summary = ["Total: %d\n" % counter]
-        return  "\n".join(summary + output)
+        if not counter:
+            summary = "No new updates"
+        else:
+            summary = "${color orange}Total updates: %d$color" % counter
+
+        return  "\n".join([summary] + output)
 
 
 if __name__ == "__main__":

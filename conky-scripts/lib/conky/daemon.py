@@ -28,7 +28,7 @@ class ConkyDaemon(Daemon):
                 try:
                     mod.try_run(self.counter) 
                 except Exception as e:
-                    ConkyError(mod.obj, mod.filename, e).handle()
+                    ConkyError(mod, mod.filename, e).handle()
             time.sleep(1)
             self.counter += 1
 
