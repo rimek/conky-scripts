@@ -20,8 +20,12 @@ class GitCheck(ConkyModule):
     def run(self):
         output = []
         for (name,repo) in self.repos:
-            retcode = call(self.command % repo, shell=True) 
-            res = "${color red}changed$color" if retcode else "ok"
+            repo = os.path.expanduser(repo)
+            if not os.path.exists(repo):
+                res = "${color orange}not exist$color"
+            else:
+                retcode = call(self.command % repo, shell=True) 
+                res = "${color red}changed$color" if retcode else "ok"
             output.append("%s $alignr %s" % (name, res))
         return "\n".join(output)
 
