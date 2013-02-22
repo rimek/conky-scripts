@@ -77,9 +77,23 @@ class Mail(ConkyModule):
     def reset(self):
         self.key_manager.reset(self.user)
 
+def NeublocMail(Mail):
+    boxes = (('Inbox', 'Inbox'),)
+
+    def __init__(self, period):
+        Mail.__init__(self,period)
+
+    def prepare(self, user = 'mrim@neubloc.net'):
+        self.user = user
+        self.key_manager = KeyringManager('Conky Mail Checker',
+                'conky-services-mail-neubloc')
+        self.passwd = self.key_manager.get(user)
+        self.host = 'imap.secureserver.net'
+
+
 
 if __name__ == '__main__':
-    m = Mail(1)
+    m = NeublocMail(1)
     m.prepare()
 
     if len(sys.argv) == 2:
